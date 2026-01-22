@@ -1,8 +1,19 @@
-# SISTEMINHA ECOFARM - TECHNICAL DOCUMENTATION
-## Complete Prompt Architecture & Application Functionality Guide
-
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://sisteminha-ecofarm.expo.app)
 > **Access the platform at**: [https://sisteminha-ecofarm.expo.app](https://sisteminha-ecofarm.expo.app)
+
+---
+
+## 🔗 Official Links & Deployment Status
+
+Use these links for Devpost, README, or project documentation:
+
+- **Expo Project Dashboard:** [https://expo.dev/accounts/tuppy/projects/sisteminha-ecofarm](https://expo.dev/accounts/tuppy/projects/sisteminha-ecofarm)
+- **Subdomain:** `sisteminha-ecofarm`
+- **Access URLs (Web / EAS Hosting):**
+  - 🔵 **Preview:** [https://sisteminha-ecofarm--preview.expo.app](https://sisteminha-ecofarm--preview.expo.app)
+  - 🟢 **Production:** [https://sisteminha-ecofarm.expo.app](https://sisteminha-ecofarm.expo.app)
+
+---
 
 ## 📋 TABLE OF CONTENTS
 - Project Overview & Architecture
@@ -523,8 +534,19 @@ npx expo start --web
 npx expo export --platform web
 
 # Deploy to Expo Hosting
+# Preview:
+eas deploy --platform web --channel preview
+# Production:
 eas deploy --platform web --prod
 ```
+
+### 🔧 TSConfig & Subproject Focus
+
+The root `tsconfig.json` has been adjusted to prevent conflicts with the `ecofarm-expo` subproject. Since `node_modules` now resides within the subproject:
+- Explicit `node` types were removed from the root to avoid "types not found" errors.
+- The `ecofarm-expo` directory is excluded from root compilation to keep the IDE responsive and prevent type shadowing.
+
+> **Note**: If you need to run the legacy Vite version from the root, run `npm install` in the root directory first.
 
 ### Environment Variables
 

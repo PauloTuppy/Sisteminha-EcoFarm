@@ -70,6 +70,22 @@ Para automatizar os deploys a cada push na `main`:
 3. Vá em **GitHub Service** e conecte seu repositório.
 4. Configure para que o comando `eas deploy --platform web --prod` seja executado após builds de sucesso.
 
+## ✅ Verificando se o deploy está OK
+Para garantir que está tudo certo com o seu demo:
+
+1. **Publique as alterações**:  
+   - Preview: `eas deploy --platform web --channel preview`  
+   - Produção: `eas deploy --platform web --prod`
+
+2. **Verifique no Dashboard**:  
+   Acesse [https://expo.dev/accounts/tuppy/projects/sisteminha-ecofarm](https://expo.dev/accounts/tuppy/projects/sisteminha-ecofarm) e confirme se o status está como **"Completed"**.
+
+3. **Teste as URLs**:  
+   - [https://sisteminha-ecofarm.expo.app](https://sisteminha-ecofarm.expo.app)  
+   - [https://sisteminha-ecofarm--preview.expo.app](https://sisteminha-ecofarm--preview.expo.app)
+
+Se as páginas carregarem corretamente, o Sisteminha EcoFarm está pronto para o julgamento!
+
 ***
 
 **Status**: ✅ Configuração completa!  
