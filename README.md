@@ -1,6 +1,9 @@
 # SISTEMINHA ECOFARM - TECHNICAL DOCUMENTATION
 ## Complete Prompt Architecture & Application Functionality Guide
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://sisteminha-ecofarm.expo.app)
+> **Access the platform at**: [https://sisteminha-ecofarm.expo.app](https://sisteminha-ecofarm.expo.app)
+
 ## 📋 TABLE OF CONTENTS
 - Project Overview & Architecture
 - Core Prompts Used to Create the Application
@@ -24,10 +27,11 @@
 - Support farmers in semi-arid regions with climate-adapted guidance
 
 ### Technology Stack
-- **Frontend**: React 18 + TypeScript + Tailwind CSS
-- **Backend**: Gemini 3 Pro Extended Thinking API
-- **Data**: Browser-based (SQLite via Room/Realm for mobile)
-- **Mobile**: React Native compatibility (offline-first)
+- **Framework**: [Expo](https://expo.dev) (React Native Web + Expo Router)
+- **Styling**: Tailwind CSS (NativeWind)
+- **AI Agent**: Gemini 1.5/2.0 Flash (Multi-tool Orchestration)
+- **Hosting**: [EAS Hosting](https://expo.dev/eas/hosting)
+- **Data**: Local Storage / IndexedDB (Offline-first architecture)
 - **Export**: Excel (.xlsx) with embedded formulas, CSV, PDF
 
 ---
@@ -501,22 +505,33 @@ ActivityRecords ---> CalculatedMetrics
 
 ## 🚀 7. DEPLOYMENT & CONFIGURATION
 
-### Local Development Setup
+### Local Development & Deployment (Expo)
+
+This project has been migrated to **Expo** to ensure a seamless web experience and easy deployment via EAS Hosting.
 
 ```bash
+# Enter the project directory
+cd ecofarm-expo
+
 # Install dependencies
 npm install
 
-# Set environment variables
-echo "VITE_GEMINI_API_KEY=sk-xxx" > .env.local
-echo "VITE_OPENMETEO_API=https://api.open-meteo.com/v1" >> .env.local
-
-# Run development server
-npm run dev
+# Run development server (Web)
+npx expo start --web
 
 # Build for production
-npm run build
+npx expo export --platform web
+
+# Deploy to Expo Hosting
+eas deploy --platform web --prod
 ```
+
+### Environment Variables
+
+| Variable | Purpose | Required |
+|---|---|---|
+| EXPO_PUBLIC_API_KEY | Gemini API Key (client-side) | Yes |
+| VITE_APP_ENV | Environment (dev/staging/prod) | Yes |
 
 ### Environment Variables
 
