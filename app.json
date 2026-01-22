@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Sisteminha EcoFarm",
+    "slug": "sisteminha-ecofarm",
+    "owner": "tuppy",
+    "version": "1.0.0",
+    "assetBundlePatterns": ["**/*"],
+    "web": {
+      "output": "static",
+      "favicon": "./favicon.png"
+    },
+    "plugins": ["expo-router"],
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTabletMode": true,
+      "bundleIdentifier": "com.ecofarm.sisteminha"
+    },
+    "android": {
+      "package": "com.ecofarm.sisteminha"
+    }
+  }
+}
