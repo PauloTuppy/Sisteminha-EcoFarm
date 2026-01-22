@@ -1,0 +1,28 @@
+{
+  "cli": {
+    "version": ">= 5.0.0"
+  },
+  "build": {
+    "preview": {
+      "platform": "web",
+      "channel": "preview"
+    },
+    "production": {
+      "platform": "web",
+      "channel": "production"
+    }
+  },
+  "submit": {
+    "production": {}
+  },
+  "deploy": {
+    "preview": {
+      "distribution": "expo",
+      "channel": "preview"
+    },
+    "production": {
+      "distribution": "expo",
+      "channel": "production"
+    }
+  }
+}
