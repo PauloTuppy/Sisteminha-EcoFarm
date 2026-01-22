@@ -57,7 +57,8 @@ eas deploy --platform web --prod
 
 ## 🔧 Troubleshooting
 
-- **Erro de Tailwind**: Certifique-se de que o `global.css` está importado no `app/_layout.tsx`.
+- **Comando `eas` não reconhecido**: Se o Windows retornar que "eas não é reconhecido como um comando", tente usar o prefixo `npx`:
+  - Em vez de `eas deploy`, use: `npx eas-cli@latest deploy --platform web --prod`
 - **Variáveis de Ambiente**: A chave da API Gemini deve estar configurada como `EXPO_PUBLIC_API_KEY` no arquivo `.env`.
 - **Portas**: Se a porta 8081 estiver ocupada, o Expo tentará a próxima disponível.
 
